@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include <windowsx.h>
+#include <shellscalingapi.h>
 
 #undef interface
 
@@ -61,6 +62,10 @@ bstk::OSWindow Win32Context::CreateWindow()
 {
     constexpr uint32_t kWidth = 1280;
     constexpr uint32_t kHeight = 720;
+
+#ifdef DPI_AWARE
+    SetProcessDpiAwareness(PROCESS_SYSTEM_DPI_AWARE);
+#endif
 
     bstk::OSWindow output = {};
 

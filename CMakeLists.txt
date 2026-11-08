@@ -8,6 +8,7 @@ set(CONTEXTS_PATH ${CMAKE_CURRENT_SOURCE_DIR}/contexts)
 
 if (WIN32)
   list(APPEND PLATFORM_SOURCES ${CONTEXTS_PATH}/win32_context.cc)
+  list(APPEND PLATFORM_LIBRARIES shcore)
 endif()
 
 if (UNIX)
